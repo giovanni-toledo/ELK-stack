@@ -1,0 +1,33 @@
+---
+  - name: Packetbeat install and launch
+    hosts: webservers
+    become: true
+    tasks:
+      - name: install libpcap
+        apt:
+          name: libpcap0.8
+          state: present
+          
+      - name: download packetbeat
+        get_url: 
+          url: https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.13.1-amd64.deb
+          dest: /home/azadmin/
+          
+      - name: install packetbeat
+        command: dpkg -i packetbeat-7.13.1-amd64.deb
+
+      - name: drop in packetbeat.yml
+        copy:
+          src: /etc/ansible/roles/files/packetbeat-cfg.yml
+          dest: /etc/packetbeat/packetbeat.yml
+
+      - name: set up packetbeat
+        command: packetbeat setup -e
+
+      - name: enable filebeat service
+        command: service packetbeat start
+
+      - name: enable filebeat on boot
+        systemd:
+          name: packetbeat
+          enabled: yes
