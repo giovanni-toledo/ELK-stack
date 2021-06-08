@@ -51,7 +51,8 @@ The machines on the internal network are not exposed to the public Internet.
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from my Public IP.
 
 Machines within the network can only be accessed by the JumpBox.
-- 
+- Network Security Group rules are in place to deny all traffic by default, only allowing necessary services on specific ports.
+- The Web VMs are configured to only accept incoming SSH connections from the ansible container on the JumpBox via SSH keys. 
 
 A summary of the access policies in place can be found in the table below.
 
