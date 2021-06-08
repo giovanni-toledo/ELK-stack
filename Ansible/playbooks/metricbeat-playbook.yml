@@ -5,6 +5,7 @@
     tasks:
       - name: download metricbeat
         command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+        warn: false
 
       - name: install metricbeat
         command: dpkg -i metricbeat-7.4.0-amd64.deb
@@ -21,7 +22,9 @@
         command: metricbeat setup -e
 
       - name: enable metricbeat 
-        command: service metricbeat start 
+        ansible.builtin.service:
+          name: metricbeat
+          state: started
 
       - name: enable metricbeat on boot
         systemd:
