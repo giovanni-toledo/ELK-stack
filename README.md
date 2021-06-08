@@ -42,7 +42,7 @@ The configuration details of each machine may be found below.
 | Web-1     | DVWA Host  | 10.0.0.8   | Linux            |
 | Web-2     | DVWA Host  | 10.0.0.9   | Linux            |
 | Web-3     | DVWA Host  | 10.0.0.10  | Linux            |
-| ELKserver | Monitoring | 10.1.0.4   | Linux            |
+| ELKserver | ELK Host   | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
