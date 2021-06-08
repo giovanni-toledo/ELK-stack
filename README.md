@@ -7,11 +7,11 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select playbooks from the [Ansible/playbooks](Ansible/playbooks) directory may be used to install only certain pieces of it, such as Filebeat.
 
   - Ansible/playbooks
-    - [filebeat-playbook](../../Ansible/filebeat-playbook.yml)
-    - [metricbeat-playbook](../../Ansible/metricbeat-playbook.yml)
-    - [packetbeat-playbook](../../Ansible/packetbeat-playbook.yml)
-    - [elk-playbook](../../Ansible/packetbeat-plaubook.yml)
-    - [dvwa-playbook](../../Ansible/dvwa-playbook.yml)
+    - [filebeat-playbook](Ansible/playbooks/filebeat-playbook.yml)
+    - [metricbeat-playbook](Ansible/playbooks/metricbeat-playbook.yml)
+    - [packetbeat-playbook](Ansible/playbooks/packetbeat-playbook.yml)
+    - [elk-playbook](Ansible/playbooks/packetbeat-plaubook.yml)
+    - [dvwa-playbook](Ansible/playbooks/dvwa-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -78,7 +78,7 @@ The elk-playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![ELK-dockerps-output](Images/elkdockerps.png)
+![ELK-dockerps-output](Images/docker-ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -97,21 +97,21 @@ These Beats allow us to collect the following information from each machine:
     - New users and groups 
     - Sudo commands  
     - Syslog events that you can expand on.
-    ![Filebeat-dashboard](Images/filebeatdashboard.png)
+    ![Filebeat-dashboard](Images/filebeat-dashboard.png)
 
 - `MetricBeat` collects system metrics from the operating system and services running on the server. On the kibana dashboard you can see data such as:
     - CPU and memory usage
     - Running processes
     - Inbound and Outbound network traffic
     - System Load
-    ![Metricbeat-dashboard](Images/metricbeatdashboard.png)
+    ![Metricbeat-dashboard](Images/metricbeat-dashboard.png)
 
 - `Packetbeat` analyzes network packets and traffic flows on configured services or ports. On the Kibana dashboard you can see data such as:
     - DNS and HTTP Transactions
     - Response times and percentiles
     - Erros vs successful transactions
     - Latency
-    ![Packetbeat-dashboard](Images/packetbeatdashboard.png)
+    ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
 
 ### Using the Playbooks
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
