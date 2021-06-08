@@ -27,7 +27,7 @@
       - name: enable filebeat service
         command: service packetbeat start
 
-      - name: enable filebeat on boot
+      - name: enable packetbeat on boot
         systemd:
           name: packetbeat
           enabled: yes
