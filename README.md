@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](Diagrams/NetworkDiagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select playbooks from the [Ansible/playbooks](Ansible/playbooks) directory may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select playbooks from the `Ansible/playbooks` directory may be used to install only certain pieces of it, such as Filebeat.
 
   - Ansible/playbooks
     - [filebeat-playbook](Ansible/playbooks/filebeat-playbook.yml)
@@ -28,9 +28,9 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - By implementing a Load Balancer we are protecting the availability of the DVWA, potentially defending it against a DDoS attack.
-- The JumpBox VM acts as a gateway, restricting access from the internet to the Web VMs and providing an additional layer of protection via configured SSH keys.
+- The JumpBox VM acts as a gateway, restricting access from the internet to the Web VMs and providing an additional layer of protection via configured SSH keys, ensuring that access is restricted.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem and system configuration.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem, system metrics, and network traffic.
 - Filebeat monitors log files or specified locations and forwards them to ElasticSearch or Logstash for indexing.
 - Metricbeat collects metrics from systems and services and sends them to ElasticSearch or Logstash.
 
@@ -59,9 +59,9 @@ A summary of the access policies in place can be found in the table below.
 | Name         | Publicly Accessible | Allowed IP Addresses    | Allowed Ports  | Allowed Protocols |
 |--------------|---------------------|-------------------------|----------------|-------------------|
 | JumpBox      | Yes                 | PublicIP                | 22             | TCP               |
-| Web-1        | No                  | 10.0.0.7, 13.91.129.109 | 22, 80         | TCP               |
-| Web-2        | No                  | 10.0.0.7, 13.91.129.109 | 22, 80         | TCP               |
-| Web-3        | No                  | 10.0.0.7, 13.91.129.109 | 22, 80         | TCP               |
+| Web-1        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
+| Web-2        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
+| Web-3        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
 | ELKserver    | No                  | 10.0.0.7, PublicIP      | 22, 5601, 9200 | TCP               |
 | LoadBalancer | Yes                 | PublicIP                | 80             | TCP               |
 
