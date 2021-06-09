@@ -49,5 +49,23 @@ Alternatively, you can run each of the following playbooks to install each beat 
 - sets up filebeat
 - starts the filebeat service and enables it on boot
 
-`metricbeat-playbook.yml`
-`packetbeat-playbook.yml`
+`metricbeat-playbook.yml` goes through the following steps:
+- downloads metricbeat 7.4.0
+- installs metricbeat with dpkg
+- drops in the configuration file [configs/metricbeat-cgf.yml](configs/metricbeat-cfg.yml)
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+    `src: /etc/ansible/roles/files/metricbeat-cfg.yml`
+- enables the metricbeat docker module
+- sets up metricbeat
+- starts the metricbeat service and enables it on boot
+
+`packetbeat-playbook.yml` goes through the following steps:
+- installs libpcap0.8
+- downloads packetbeat 7.13.1
+- installs packetbeat 7.13.1 with dpkg
+- drops in the configuration file [configs/packetbeat-cgf.yml](configs/packetbeat-cfg.yml)
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+    `src: /etc/ansible/roles/files/packetbeat-cfg.yml`
+- enables the packetbeat docker module
+- sets up packetbbeat
+- starts the packetbeat service and enables it on boot
