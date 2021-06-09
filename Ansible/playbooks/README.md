@@ -33,12 +33,16 @@ The playbook is executed on the `elk` host goes through the following steps:
 These playbooks configure the beats by dropping in configuration files from [configs](../configs)
 For information on how to edit the configuration file templates see: [configs/README](../configs/README.md)
 
+#### Multiple beats
+
 To set up, run:
 `ansible-playbook beats-playbook.yml`   
 
 _This playbook installs **filebeat, metricbeat, and packetbeat**_ on the `webservers` host group.
 
 Alternatively, you can run each of the following playbooks to install each beat individually:
+
+#### Filebeat
 
 `filebeat-playbook.yml` goes through the following steps:
 - downloads filebeat 7.4.0
@@ -50,6 +54,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 - sets up filebeat
 - starts the filebeat service and enables it on boot
 
+#### Metricbeat
+
 `metricbeat-playbook.yml` goes through the following steps:
 - downloads metricbeat 7.4.0
 - installs metricbeat with dpkg
@@ -59,6 +65,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 - enables the metricbeat docker module
 - sets up metricbeat
 - starts the metricbeat service and enables it on boot
+
+#### Packetbeat
 
 `packetbeat-playbook.yml` goes through the following steps:
 - installs libpcap0.8
