@@ -20,7 +20,7 @@ setup.kibana:
 
 ### Metricbeat
 
-The following changes need to be made to [metricbeat-cfg.yml](metricbeat-cfg.yml) 
+The following changes need to be made to [metricbeat-cfg.yml](metricbeat-cfg.yml)   
 Same as above, Elk_server_ip should be replaced with the IP of the ELKserver VM
 ```
 setup.kibana:
@@ -36,7 +36,7 @@ output.elasticsearch:
 
 ### Packetbeat
 
-The following changes need to be made to [packetbeat-cfg.yml](packetbeat-cfg.yml) 
+The following changes need to be made to [packetbeat-cfg.yml](packetbeat-cfg.yml)   
 Same as above, Elk_server_ip should be replaced with the IP of the ELKserver VM
 ```
 setup.kibana:
