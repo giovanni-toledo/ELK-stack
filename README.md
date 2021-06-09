@@ -31,7 +31,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - By implementing a Load Balancer we are protecting the availability of the DVWA, potentially defending it against a DDoS attack.
-- The JumpBox VM acts as a gateway, restricting access from the internet to the Web VMs and providing an additional layer of protection via configured SSH keys, ensuring that access is restricted.
+- The JumpBox VM acts as a gateway, restricting access from the internet to the Web VMs and providing an additional layer of protection via configured SSH keys, ensuring that access is only allowed from a one machine as a specific user.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem, system metrics, and network traffic.
 - Filebeat monitors log files or specified locations and forwards them to ElasticSearch or Logstash for indexing.
@@ -51,7 +51,7 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from my Public IP.
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from a whitelisted Public IP.
 
 Machines within the network can only be accessed by the JumpBox.
 - Network Security Group rules are in place to deny all traffic by default, only allowing necessary services on specific ports.
