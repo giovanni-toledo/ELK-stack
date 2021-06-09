@@ -30,7 +30,7 @@ The playbook is executed on the `elk` host goes through the following steps:
 
 ### ELK beats
 
-These playbooks configure the beats by dropping in configuration files from [configs](../configs)
+These playbooks configure the beats by dropping in configuration files from [configs](../configs)   
 For information on how to edit the configuration file templates see: [configs/README](../configs/README.md)
 
 #### Multiple beats
