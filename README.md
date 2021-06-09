@@ -157,5 +157,12 @@ Certain modifications to the configuration files are also required, for more inf
     - `ansible-playbook dvwa-playbook.yml`
 4. Install the ELK container
     - `ansible-playbook elk-playbook.yml`
-5. Install the beats
+5. Modify the configuration files
+    - see [playbooks/README](Ansible/playbooks/README.md)
+    - see [configs/README](Ansible/configs/README.md)
+6. Install the beats
     - `ansible-playbook beats-playbook.yml`
+    - Alternatively install each beat individually
+        - `ansible-playbook filebeat-playbook.yml`
+        - `ansible-playbook metricbeat-playbook.yml`
+        - `ansible-playbook packtbeat-playbook.yml`
