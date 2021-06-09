@@ -29,7 +29,7 @@ setup.kibana:
 
 ```
 output.elasticsearch:
-  hosts: ["10.1.0.4:9200"]
+  hosts: ["Elk_server_ip:9200"]
   username: "elastic"
   password: "changeme"
 ```
