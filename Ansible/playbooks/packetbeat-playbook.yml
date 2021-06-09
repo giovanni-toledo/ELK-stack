@@ -8,10 +8,8 @@
           name: libpcap0.8
           state: present
           
-      - name: download packetbeat
-        get_url: 
-          url: https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.13.1-amd64.deb
-          dest: /home/azadmin/
+      - name: download packetbeat 
+        command: curl -L -O https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.13.1-amd64.deb
           
       - name: install packetbeat
         command: dpkg -i packetbeat-7.13.1-amd64.deb
