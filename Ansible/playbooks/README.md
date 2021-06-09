@@ -40,7 +40,14 @@ _This playbook installs **filebeat, metricbeat, and packetbeat**_ on the `webser
 Alternatively, you can run each of the following playbooks to install each beat individually:
 
 `filebeat-playbook.yml` goes through the following steps:
-- downloads 
+- downloads filebeat 7.4.0
+- installs filebeat 7.4.0 with dpkg
+- drops in the configuration file [configs/filebeat-cgf.yml](configs/filebeat-cfg.yml)
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+    `src: /etc/ansible/roles/files/filebeat-cfg.yml`
+- enables the filebeat system module
+- sets up filebeat
+- starts the filebeat service and enables it on boot
 
 `metricbeat-playbook.yml`
 `packetbeat-playbook.yml`
