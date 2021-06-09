@@ -138,9 +138,10 @@ In order to use the playbooks, you will need to have an Ansible control node alr
 
 ### Running the playbooks
 
+
+All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/playbooks)   
 For more information on how to run the playbooks and necessary modifications see: [playbooks/README](Ansible/playbooks/README.md)   
 Certain modifications to the configuration files are also required, for more information see: [configs/README](Ansible/configs/README.md)   
-All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/playbooks)
 
 1. Install the DVWA with the `dvwa-playbook.yml`
 2. Install the ELK server with the `elk-playbook.yml`
