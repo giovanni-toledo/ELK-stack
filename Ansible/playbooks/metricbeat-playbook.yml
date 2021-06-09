@@ -11,7 +11,7 @@
 
     - name: drop in metricbeat-cfg.yml
       copy:
-        src: /etc/ansible/roles/files/metricbeat-cfg.yml
+        src: ../configs/metricbeat-cfg.yml
         dest: /etc/metricbeat/metricbeat.yml
 
     - name: enable metricbeat docker module
