@@ -11,7 +11,7 @@
 
     - name: drop in filebeat.yml
       copy:
-        src: /etc/ansible/roles/files/filebeat-cfg.yml
+        src: ../configs/filebeat-cfg.yml
         dest: /etc/filebeat/filebeat.yml
 
     - name: enable filebeat system module
