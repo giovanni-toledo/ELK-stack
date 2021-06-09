@@ -34,7 +34,8 @@ These playbooks configure the beats by dropping in configuration files from [con
 For information on how to edit the configuration file templates see: [configs/README](../configs/README.md)
 
 To set up, run:
-`ansible-playbook beats-playbook.yml`
+`ansible-playbook beats-playbook.yml`   
+
 _This playbook installs **filebeat, metricbeat, and packetbeat**_ on the `webservers` host group.
 
 Alternatively, you can run each of the following playbooks to install each beat individually:
