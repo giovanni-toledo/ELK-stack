@@ -65,7 +65,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-1        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
 | Web-2        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
 | Web-3        | No                  | 10.0.0.7, LoadBalancer  | 22, 80         | TCP               |
-| ELKserver    | No                  | 10.0.0.7, PublicIP      | 22, 5601, 9200 | TCP               |
+| ELKserver    | Yes                 | 10.0.0.7, PublicIP      | 22, 5601, 9200 | TCP               |
 | LoadBalancer | Yes                 | PublicIP                | 80             | TCP               |
 
 ### Elk Configuration
