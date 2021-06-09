@@ -139,10 +139,10 @@ In order to use the playbooks, you will need to have an Ansible control node alr
 ### Running the playbooks
 
 For more information on how to run the playbooks and necessary modifications see: [playbooks/README](Ansible/playbooks/README.md)   
+Certain modifications to the configuration files are also required, for more information see: [configs/README](Ansible/configs/README.md)   
 All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/playbooks)
 
 1. Install the DVWA with the `dvwa-playbook.yml`
-    - SSH into one of the webservers and run `curl localhost/setup.php` to confirm that the dvwa has been installed properly
 2. Install the ELK server with the `elk-playbook.yml`
 3. Install the beats with `beats-playbook.yml`
     - Alternatively, you can install each beat running their individual playbooks
