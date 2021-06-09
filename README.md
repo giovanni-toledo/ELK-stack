@@ -146,6 +146,6 @@ All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/p
 2. Install the ELK server with the `elk-playbook.yml`
 3. Install the beats with `beats-playbook.yml`
     - Alternatively, you can install each beat running their individual playbooks
-        1. `filebeat-playbook.yml`
-        2. `metricbeat-playbook.yml`
-        3. `packetbeat-playbook.yml`
+        - `filebeat-playbook.yml`
+        - `metricbeat-playbook.yml`
+        - `packetbeat-playbook.yml`
