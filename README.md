@@ -117,16 +117,32 @@ These Beats allow us to collect the following information from each machine:
     - Latency
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
 
-### Using the Playbooks
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the hosts file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+### Setting up Ansible
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+In order to use the playbooks, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:   
 
+- SSH into the ansible container
+- Edit `/etc/ansible/hosts` to include the following lines:
+    ```
+    [webservers]
+    10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.10 ansible_python_interpreter=/usr/bin/python3
+
+    [elk]
+    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+    ```
+- Edit the following line in `/etc/ansible/ansible.cfg` to include the username configured for the SSH key if present:
+    `remote_user = azadmin`
+
+### Running the playbooks
+
+For more information on how to run the playbooks and necessary modifications see: [playbooks/README](Ansible/playbooks/README.md)   
+All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/playbooks)
+
+1. Install the DVWA with the `dvwa-playbook.yml`
+    - SSH into one of the webservers and run `curl localhost/setup.php` to confirm that the dvwa has been installed properly
+2. Install the ELK server with the `elk-playbook.yml`
+3. Install the beats with `beats-playbook.yml`
+    - Alternatively, you can install each beat running their individual playbooks
