@@ -44,7 +44,7 @@ Alternatively, you can run each of the following playbooks to install each beat 
 - downloads filebeat 7.4.0
 - installs filebeat 7.4.0 with dpkg
 - drops in the configuration file [configs/filebeat-cgf.yml](../configs/filebeat-cfg.yml)   
-    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**   
     `src: /etc/ansible/roles/files/filebeat-cfg.yml`
 - enables the filebeat system module
 - sets up filebeat
@@ -53,8 +53,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 `metricbeat-playbook.yml` goes through the following steps:
 - downloads metricbeat 7.4.0
 - installs metricbeat with dpkg
-- drops in the configuration file [configs/metricbeat-cgf.yml](../configs/metricbeat-cfg.yml)
-    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+- drops in the configuration file [configs/metricbeat-cgf.yml](../configs/metricbeat-cfg.yml)   
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**   
     `src: /etc/ansible/roles/files/metricbeat-cfg.yml`
 - enables the metricbeat docker module
 - sets up metricbeat
@@ -64,8 +64,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 - installs libpcap0.8
 - downloads packetbeat 7.13.1
 - installs packetbeat 7.13.1 with dpkg
-- drops in the configuration file [configs/packetbeat-cgf.yml](../configs/packetbeat-cfg.yml)
-    **this line may need to be edited to match the actual location of the config file template on the ansible control node**
+- drops in the configuration file [configs/packetbeat-cgf.yml](../configs/packetbeat-cfg.yml)   
+    **this line may need to be edited to match the actual location of the config file template on the ansible control node**   
     `src: /etc/ansible/roles/files/packetbeat-cfg.yml`
 - enables the packetbeat docker module
 - sets up packetbbeat
