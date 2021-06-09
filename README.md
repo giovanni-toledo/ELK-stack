@@ -146,15 +146,16 @@ In order to use the playbooks, you will need to have an Ansible control node alr
 
 ### Running the playbooks
 
-
 All the playbooks referenced below are located in [Ansible/playbooks/](Ansible/playbooks)   
 For more information on how to run the playbooks and necessary modifications see: [playbooks/README](Ansible/playbooks/README.md)   
 Certain modifications to the configuration files are also required, for more information see: [configs/README](Ansible/configs/README.md)   
 
-1. Install the DVWA with the `dvwa-playbook.yml`
-2. Install the ELK server with the `elk-playbook.yml`
-3. Install the beats with `beats-playbook.yml`
-    - Alternatively, you can install each beat running their individual playbooks
-        - `filebeat-playbook.yml`
-        - `metricbeat-playbook.yml`
-        - `packetbeat-playbook.yml`
+1. Clone this repository
+    - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
+2. `cd ELK-stack/Ansible/playbooks`
+3. Install the DVWA
+    - `ansible-playbook dvwa-playbook.yml`
+4. Install the ELK container
+    - `ansible-playbook elk-playbook.yml`
+5. Install the beats
+    - `ansible-playbook beats-playbook.yml`
