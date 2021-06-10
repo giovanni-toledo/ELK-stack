@@ -36,7 +36,7 @@ Load balancing ensures that the application will be highly available, in additio
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem, system metrics, and network traffic.
 - Filebeat monitors log files or specified locations and forwards them to ElasticSearch or Logstash for indexing.
 - Metricbeat collects metrics from systems and services and sends them to ElasticSearch or Logstash.
-- Packetbeat analyzed network packets and traffic flows. 
+- Packetbeat analyzes network packets and traffic flows. 
 
 The configuration details of each machine may be found below.
 
