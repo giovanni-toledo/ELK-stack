@@ -139,8 +139,8 @@ In order to use the playbooks, you will need to have an Ansible control node alr
     [elk]
     10.1.0.4 ansible_python_interpreter=/usr/bin/python3
     ```
-- Edit the following line in `/etc/ansible/ansible.cfg` to include the username configured for the SSH key, if present:   
-    `remote_user = azadmin`
+- Uncomment and edit the following line in `/etc/ansible/ansible.cfg` to include the username configured for the SSH key, if needed:   
+    `# remote_user = root`
 
 ### Running the playbooks
 

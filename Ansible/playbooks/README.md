@@ -24,6 +24,9 @@ These playbooks must be run on the ansible control node, after editing `/etc/ans
 To set up, run: 
 `ansible-playbook dvwa-playbook.yml` 
 
+Running the playbook should give an output similar to:   
+![DVWA-playbook-output](../../Images/dvwa-playbook-output.png)
+
 The playbook is executed on the `webservers` host group and goes through the following steps:
 - installs docker.io
 - installs python3-pip
