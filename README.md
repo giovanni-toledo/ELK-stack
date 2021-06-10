@@ -153,7 +153,8 @@ Certain modifications to the configuration files are also required, for more inf
 
 1. Clone this repository
     - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
-2. `cd ELK-stack/Ansible/playbooks`
+2. Navigate to the playbooks directory
+    - `cd ELK-stack/Ansible/playbooks`
 3. Install the ELK container
     - `ansible-playbook elk-playbook.yml`
 4. Install the DVWA
