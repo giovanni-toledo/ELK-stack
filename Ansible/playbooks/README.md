@@ -4,6 +4,8 @@ This directory contains ansible playbooks used to install the docker containers 
 
 These playbooks must be run on the ansible control node, after editing `/etc/ansible/hosts` and `/etc/ansible/ansible.cfg`. 
 
+### Setting up Ansible
+
 - Edit `/etc/ansible/hosts` to include the following lines:
     ```
     [webservers]
