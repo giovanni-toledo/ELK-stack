@@ -164,7 +164,7 @@ Certain modifications to the configuration files are also required, for more inf
     - see [configs/README](Ansible/configs/README.md)
 6. Install the beats
     - `ansible-playbook beats-playbook.yml`
-    - Alternatively install each beat individually
+    - Alternatively, install each beat individually
         - `ansible-playbook filebeat-playbook.yml`
         - `ansible-playbook metricbeat-playbook.yml`
         - `ansible-playbook packtbeat-playbook.yml`
