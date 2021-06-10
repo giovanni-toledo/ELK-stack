@@ -80,7 +80,7 @@ Alternatively, you can run each of the following playbooks to install each beat 
 
 `metricbeat-playbook.yml` goes through the following steps:
 - downloads metricbeat 7.4.0
-- installs metricbeat with dpkg
+- installs metricbeat 7.4.0 with dpkg
 - drops in the configuration file [configs/metricbeat-cgf.yml](../configs/metricbeat-cfg.yml)   
 - enables the metricbeat docker module
 - sets up metricbeat
