@@ -154,11 +154,11 @@ Certain modifications to the configuration files are also required, for more inf
 1. Clone this repository
     - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
 2. `cd ELK-stack/Ansible/playbooks`
-3. Install the DVWA
-    - `ansible-playbook dvwa-playbook.yml`
-4. Install the ELK container
+3. Install the ELK container
     - `ansible-playbook elk-playbook.yml`
-5. Modify the configuration files
+4. Install the DVWA
+    - `ansible-playbook dvwa-playbook.yml`
+5. Modify the configuration files located in [Ansible/configs](Ansible/configs)
     - see [playbooks/README](Ansible/playbooks/README.md)
     - see [configs/README](Ansible/configs/README.md)
 6. Install the beats
@@ -167,3 +167,4 @@ Certain modifications to the configuration files are also required, for more inf
         - `ansible-playbook filebeat-playbook.yml`
         - `ansible-playbook metricbeat-playbook.yml`
         - `ansible-playbook packtbeat-playbook.yml`
+
