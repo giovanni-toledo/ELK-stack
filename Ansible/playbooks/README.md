@@ -16,8 +16,8 @@ These playbooks must be run on the ansible control node, after editing `/etc/ans
     [elk]
     10.1.0.4 ansible_python_interpreter=/usr/bin/python3
     ```
-- Edit the following line in `/etc/ansible/ansible.cfg` to include the username configured for the SSH key, if present:   
-    `remote_user = azadmin`
+- Uncomment and edit the following line in `/etc/ansible/ansible.cfg` to include the username configured for the SSH key, if present:   
+    `# remote_user = root`
 
 ### DVWA container
 
