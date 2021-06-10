@@ -36,6 +36,10 @@ The playbook is executed on the `webservers` host group and goes through the fol
 To set up, run: 
 `ansible-playbook elk-playbook.yml`
 
+Running the playbook should give an output similar to:   
+![Elk-playbook-output](../../Images/elk-playbook-output.png)
+
+
 The playbook is executed on the `elk` host goes through the following steps:
 - installs docker.io
 - installs python3-pip
