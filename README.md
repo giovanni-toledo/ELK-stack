@@ -8,7 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - Ansible/playbooks
     - [dvwa-playbook](Ansible/playbooks/dvwa-playbook.yml)
-    - [elk-playbook](Ansible/playbooks/packetbeat-plaubook.yml)
+    - [elk-playbook](Ansible/playbooks/packetbeat-playbook.yml)
     - [beats-playbook](Ansible/playbooks/beats-playbook.yml)
     - [filebeat-playbook](Ansible/playbooks/filebeat-playbook.yml)
     - [metricbeat-playbook](Ansible/playbooks/metricbeat-playbook.yml)
