@@ -50,7 +50,7 @@ The playbook is executed on the `elk` host goes through the following steps:
 - increases available virtual memory
 - maps the memory for use
 - downloads and launches the `sebp/elk` container
-- enables docker servise to start on boot
+- enables docker service to start on boot
 
 ### ELK beats
 
