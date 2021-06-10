@@ -161,7 +161,6 @@ Certain modifications to the configuration files are also required, for more inf
 5. Install the DVWA
     - `ansible-playbook dvwa-playbook.yml`
 6. Modify the configuration files located in [Ansible/configs](Ansible/configs)
-    - see [playbooks/README](Ansible/playbooks/README.md)
     - see [configs/README](Ansible/configs/README.md)
 7. Install the beats
     - `ansible-playbook beats-playbook.yml`
