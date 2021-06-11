@@ -27,4 +27,3 @@
         name: packetbeat
         state: started
         enabled: yes
-
