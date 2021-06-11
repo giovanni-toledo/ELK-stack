@@ -69,8 +69,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 #### Filebeat
 
 `filebeat-playbook.yml` goes through the following steps:
-- downloads filebeat 7.4.0
-- installs filebeat 7.4.0 with dpkg
+- downloads filebeat 7.13.1
+- installs filebeat 7.13.1 with dpkg
 - drops in the configuration file [configs/filebeat-cgf.yml](../configs/filebeat-cfg.yml)   
 - enables the filebeat system module
 - sets up filebeat
@@ -79,8 +79,8 @@ Alternatively, you can run each of the following playbooks to install each beat 
 #### Metricbeat
 
 `metricbeat-playbook.yml` goes through the following steps:
-- downloads metricbeat 7.4.0
-- installs metricbeat 7.4.0 with dpkg
+- downloads metricbeat 7.13.1
+- installs metricbeat 7.13.1 with dpkg
 - drops in the configuration file [configs/metricbeat-cgf.yml](../configs/metricbeat-cfg.yml)   
 - enables the metricbeat docker module
 - sets up metricbeat
