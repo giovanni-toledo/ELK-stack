@@ -30,7 +30,7 @@
   hosts: webservers
   become: true
   tasks:
-    - name: download metricbeat
+    - name: download metricbeat 7.4.0
       command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
 
     - name: install metricbeat
