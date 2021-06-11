@@ -68,7 +68,10 @@ Alternatively, you can run each of the following playbooks to install each beat 
 
 #### Filebeat
 
-`filebeat-playbook.yml` goes through the following steps:
+Running the playbook should give an output similar to:   
+![Filebeat-playbook-output](../../Images/filebeat-playbook-output.png)
+
+`ansible-playbook filebeat-playbook.yml` goes through the following steps:
 - downloads filebeat 7.13.1
 - installs filebeat 7.13.1 with dpkg
 - drops in the configuration file [configs/filebeat-cgf.yml](../configs/filebeat-cfg.yml)   
@@ -78,7 +81,10 @@ Alternatively, you can run each of the following playbooks to install each beat 
 
 #### Metricbeat
 
-`metricbeat-playbook.yml` goes through the following steps:
+Running the playbook should give an output similar to:   
+![Metricbeat-playbook-output](../../Images/metricbeat-playbook-output.png)
+
+`ansible-playbook metricbeat-playbook.yml` goes through the following steps:
 - downloads metricbeat 7.13.1
 - installs metricbeat 7.13.1 with dpkg
 - drops in the configuration file [configs/metricbeat-cgf.yml](../configs/metricbeat-cfg.yml)   
@@ -88,7 +94,10 @@ Alternatively, you can run each of the following playbooks to install each beat 
 
 #### Packetbeat
 
-`packetbeat-playbook.yml` goes through the following steps:
+Running the playbook should give an output similar to:   
+![Packetbeat-playbook-output](../../Images/packetbeat-playbook-output.png)
+
+`ansible-playbook packetbeat-playbook.yml` goes through the following steps:
 - installs libpcap0.8
 - downloads packetbeat 7.13.1
 - installs packetbeat 7.13.1 with dpkg
