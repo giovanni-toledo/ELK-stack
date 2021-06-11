@@ -24,22 +24,28 @@ packetbeat_config = env.get_template('packetbeat-cfg.yml').render(hostgroups=hos
 # write rendered files
 
 # hosts 
+print('writing rendered/hosts')
 with open('rendered/hosts', 'w') as f:
     f.write(ansible_hosts_file)
 
+
 # ansible.cfg
+print('writing rendered/ansible.cfg')
 with open('rendered/ansible.cfg', 'w') as f:
     f.write(ansible_config_file)
 
 # filebeat.yml
+print('writing rendered/filebeat.yml')
 with open('rendered/filebeat.yml', 'w') as f:
     f.write(filebeat_config)
 
 # metricbeat.yml
+print('writing rendered/metricbeat.yml')
 with open('rendered/metricbeat.yml', 'w') as f:
     f.write(metricbeat_config)
 
 # packetbeat.yml
+print('writing rendered/packetbeat.yml')
 with open('rendered/packetbeat.yml', 'w') as f:
     f.write(packetbeat_config)
 
