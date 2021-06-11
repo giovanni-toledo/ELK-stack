@@ -68,9 +68,6 @@ Alternatively, you can run each of the following playbooks to install each beat 
 
 #### Filebeat
 
-Running the playbook should give an output similar to:   
-![Filebeat-playbook-output](../../Images/filebeat-playbook-output.png)
-
 `ansible-playbook filebeat-playbook.yml` goes through the following steps:
 - downloads filebeat 7.13.1
 - installs filebeat 7.13.1 with dpkg
@@ -81,9 +78,6 @@ Running the playbook should give an output similar to:
 
 #### Metricbeat
 
-Running the playbook should give an output similar to:   
-![Metricbeat-playbook-output](../../Images/metricbeat-playbook-output.png)
-
 `ansible-playbook metricbeat-playbook.yml` goes through the following steps:
 - downloads metricbeat 7.13.1
 - installs metricbeat 7.13.1 with dpkg
@@ -93,9 +87,6 @@ Running the playbook should give an output similar to:
 - starts the metricbeat service and enables it on boot
 
 #### Packetbeat
-
-Running the playbook should give an output similar to:   
-![Packetbeat-playbook-output](../../Images/packetbeat-playbook-output.png)
 
 `ansible-playbook packetbeat-playbook.yml` goes through the following steps:
 - installs libpcap0.8
