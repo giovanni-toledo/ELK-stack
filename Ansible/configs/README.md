@@ -9,8 +9,6 @@ On both instances, `Elk_server_ip` should be the IP of the ELKserver VM
 ```
 output.elasticsearch:
   hosts: ["Elk_server_ip:9200"]
-  username: "elastic"
-  password: "changeme"
 ```
 
 ```
@@ -30,8 +28,6 @@ setup.kibana:
 ```
 output.elasticsearch:
   hosts: ["Elk_server_ip:9200"]
-  username: "elastic"
-  password: "changeme"
 ```
 
 ### Packetbeat
