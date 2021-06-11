@@ -22,10 +22,9 @@
       - name: set up packetbeat
         command: packetbeat setup -e
 
-      - name: enable packetbeat service
-        command: service packetbeat start
-
-      - name: enable packetbeat on boot
-        systemd:
+      - name: start packetbeat service
+        ansible.builtin.service:
           name: packetbeat
+          state: started
           enabled: yes
+
