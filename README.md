@@ -122,9 +122,7 @@ These Beats allow us to collect the following information from each machine:
     - Erros vs successful transactions
     - Latency
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
-
-
-
+---
 
 ## Manual install 
 
