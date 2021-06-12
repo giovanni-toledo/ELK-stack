@@ -5,36 +5,58 @@ from jinja2 import Environment, FileSystemLoader
 # load templates folder 
 env = Environment(loader=FileSystemLoader('templates'))
 
-# hosts file
-ansible_hosts_file = env.get_template('ansible-hosts').render(hostgroup=hosts.hostgroups)
-print('[!] writing rendered/hosts')
-with open('rendered/hosts', 'w+') as f:
-    f.write(ansible_hosts_file)
+def render_file(file_template, variable):
+    # put rendered file into a variable
+    render = env.get_template(file_template).render(var=variable)
+    # some output
+    print(f'[!] writing rendered/{file_template}')
+    # open file handler
+    with open(f'rendered/{file_template}', 'w') as f:
+        # write rendered file to redered/<filename>
+        f.write(render)
 
-# ansible config
+
+# ansible.cfg isn't playing nice with jinja
+def edit_cfg():
+    # specific for ansible.cfg
+    filename = 'ansible.cfg'
+    # empty list to store each line in file
+    lines = []
+    # position of line to replace
+    position = 105
+    # test
+    line = f'remote_user = {hosts.remote_user}'
+    # file handler, read mode
+    with open(f'templates/{filename}', 'r') as f:
+        # store each line in lines  
+        lines = f.readlines()
+    # remove existing line
+    lines.remove(lines[position])
+    # insert line
+    lines.insert(position, line)
+    # some output
+    print(f'[!] writing rendered/{filename}')
+    # file handler, write mode
+    with open(f'rendered/{filename}', 'w') as f:
+        # write every line in edited file 
+        for line in lines:
+            f.write(line)
+
+# hosts file
+render_file('hosts', hosts.hostgroups)
+# edit config if the remote_user is set in hosts.py
 if hosts.remote_user:
-    ansible_config_file = env.get_template('ansible.cfg').render(user=hosts.remote_user[0])
-    print('[!] writing rendered/ansible.cfg')
-    with open('rendered/ansible.cfg', 'w') as f:
-        f.write(ansible_config_file)
+    edit_cfg()
 else:
     pass
+# filebeat
+render_file('filebeat.yml', hosts.hostgroups)
+# metricbeat
+render_file('metricbeat.yml', hosts.hostgroups)
+# packetbeat 
+render_file('packetbeat.yml', hosts.hostgroups)
 
-# filebeat config
-filebeat_config = env.get_template('filebeat-cfg.yml').render(hostgroup=hosts.hostgroups)
-print('[!] writing rendered/filebeat.yml')
-with open('rendered/filebeat.yml', 'w') as f:
-    f.write(filebeat_config)
 
-# metricbeat config
-metricbeat_config = env.get_template('metricbeat-cfg.yml').render(hostgroup=hosts.hostgroups)
-print('[!] writing rendered/metricbeat.yml')
-with open('rendered/metricbeat.yml', 'w') as f:
-    f.write(metricbeat_config)
 
-# packetbeat config
-packetbeat_config = env.get_template('packetbeat-cfg.yml').render(hostgroup=hosts.hostgroups)
-print('[!] writing rendered/packetbeat.yml')
-with open('rendered/packetbeat.yml', 'w') as f:
-    f.write(packetbeat_config)
+
 
