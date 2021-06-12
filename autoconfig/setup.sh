@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Script to install dependencies, set up ansible, render configuration files 
+# to run the setup:
+#   ./setup.sh 
+# to run the setup AND run the playbooks 
+#   ./setup.sh install
+
+ARG = $1
+
 # check for root 
 if [ $UID -ne 0 ]; then
     echo 'Please run as root!';
@@ -14,7 +22,7 @@ if [ $? -ne 0 ]; then
     echo -e '[x] failed! \n[!] please install pip3 manually';
     exit;
 else
-    echo -e '[!] done\n';
+    echo -e '[+] done\n';
 fi
 
 # install jinja2
@@ -24,7 +32,7 @@ if [ $? -ne 0 ]; then
     echo '[x] failed!';
     exit;
 else 
-    echo -e '[!] done\n';
+    echo -e '[+] done\n';
 fi
 
 # create rendered/
@@ -39,10 +47,25 @@ python3 render.py
 echo '[!] configuring ansible...'
 cp rendered/ansible.cfg /etc/ansible/ansible.cfg
 cp rendered/hosts /etc/ansible/hosts
-echo -e '[!] done\n'
+echo -e '[+] done\n'
 
 # insert elastic beats configuration templates in Ansible/configs
 echo '[!] populating Ansible/configs'
 cp rendered/*beat.yml ../Ansible/configs/
-echo -e 'done\n'
+echo -e '[+] done\n'
 
+echo -e '\n[!] SETUP COMPLETE\n'
+
+# if ./setup.sh install 
+if [ $ARG = 'install' ]; then
+    cd ../Ansible/playbooks
+    # install elk server first
+    # beat playbooks fail if kibana is not ready
+    ansible-playbook elk-playbook.yml
+    # install dvwa
+    ansible-playbook dvwa-playbook.yml
+    # install beats
+    ansible-playbook beats-playbook.yml
+fi
+
+echo 'Goodbye...'
