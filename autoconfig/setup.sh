@@ -6,9 +6,6 @@
 # to run the setup AND run the playbooks 
 #   ./setup.sh install
 
-if [ ! -z $1 ]; then
-    ARG = $1
-fi
 
 # check for root 
 if [ $UID -ne 0 ]; then
@@ -59,7 +56,7 @@ echo -e '[+] done\n'
 echo -e '\n[!] SETUP COMPLETE\n'
 
 # if ./setup.sh install 
-if [ ! -z $ARG ] && [ $ARG = 'install' ]; then
+if [ ! -z $1 ] && [ $1 = 'install' ]; then
     cd ../Ansible/playbooks
     # install elk server first
     # beat playbooks fail if kibana is not ready
