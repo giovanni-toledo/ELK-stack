@@ -3,6 +3,28 @@
 This directory contains scripts used to automate the setup and deployment of the network. 
 Below is a description of each file.
 
+### setup.sh
+
+This script:
+- must be run as root
+- `./setup.sh`
+- installs dependencies:
+    - pip3
+    - jinja2
+- runs the setup
+    - creates the `rendered/` directory
+    - calls `render.py`
+    - overwrites:
+        - `/etc/ansible/hosts` with `rendered/hosts`
+        - `/etc/ansible/ansible.cfg` with `rendered/ansible.cfg`
+        - all the beat configuration files in `Elk-stack/Ansible/configs`
+- runs the playbooks
+    - `./setup.sh install`
+    - runs `elk-playbook.yml`
+    - runs `dvwa-playbook.yml`
+    - runs `beats-playbook.yml`
+
+
 ### hosts.py
 
 This file is the only one that may need to be edited to match the network configuration.   
@@ -45,24 +67,3 @@ This script:
     - `rendered/` is created by `setup.sh` and does not exist by default
     - execution fails if `rendered/` is not present
  
-
-### setup.sh
-
-This script:
-- must be run as root
-- `./setup.sh`
-- installs dependencies:
-    - pip3
-    - jinja2
-- runs the setup
-    - creates the `rendered/` directory
-    - calls `render.py`
-    - overwrites:
-        - `/etc/ansible/hosts` with `rendered/hosts`
-        - `/etc/ansible/ansible.cfg` with `rendered/ansible.cfg`
-        - all the beat configuration files in `Elk-stack/Ansible/configs`
-- runs the playbooks
-    - `./setup.sh install`
-    - runs `elk-playbook.yml`
-    - runs `dvwa-playbook.yml`
-    - runs `beats-playbook.yml`
