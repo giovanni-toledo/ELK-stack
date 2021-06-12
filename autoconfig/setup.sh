@@ -39,11 +39,12 @@ echo '[!] creating rendered/'
 mkdir rendered 2>/dev/null
 
 # render config files
-echo -e '[!] rendering configuration files...\n'
+echo '[!] rendering configuration files...'
+echo '[!] python3 render.py'
 python3 render.py 
 
 # configure ansible
-echo '[!] configuring ansible...'
+echo -e  '\n[!] configuring ansible...'
 cp rendered/ansible.cfg /etc/ansible/ansible.cfg
 cp rendered/hosts /etc/ansible/hosts
 echo -e '[+] done\n'
