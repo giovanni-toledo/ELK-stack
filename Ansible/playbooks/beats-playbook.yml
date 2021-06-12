@@ -11,7 +11,7 @@
 
     - name: drop in filebeat.yml
       copy:
-        src: ../configs/filebeat-cfg.yml
+        src: ../configs/filebeat.yml
         dest: /etc/filebeat/filebeat.yml
 
     - name: enable filebeat system module
@@ -38,7 +38,7 @@
 
     - name: drop in metricbeat-cfg.yml
       copy:
-        src: ../configs/metricbeat-cfg.yml
+        src: ../configs/metricbeat.yml
         dest: /etc/metricbeat/metricbeat.yml
 
     - name: enable metricbeat docker module
@@ -72,7 +72,7 @@
 
     - name: drop in packetbeat.yml
       copy:
-        src: ../configs/packetbeat-cfg.yml
+        src: ../configs/packetbeat.yml
         dest: /etc/packetbeat/packetbeat.yml
 
     - name: set up packetbeat
