@@ -39,7 +39,7 @@ fi
 
 # create rendered/
 echo '[!] creating rendered/'
-mkdir rendered
+mkdir rendered 2>/dev/null
 
 # render config files
 echo -e '[!] rendering configuration files...\n'
