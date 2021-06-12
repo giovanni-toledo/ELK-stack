@@ -1,3 +1,8 @@
+'''
+This file is imported by render.py and uses the variables below to render configuration files with jinja
+Edit objects to match network setup
+'''
+
 # Edit the following lines to match the Web and Elk machines
 hostgroups = [
     {
