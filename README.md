@@ -124,6 +124,8 @@ These Beats allow us to collect the following information from each machine:
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
 
 
+## Manual install 
+
 ### Setting up Ansible
 
 In order to use the playbooks, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:   
@@ -170,3 +172,31 @@ Certain modifications to the configuration files are also required, for more inf
         - `ansible-playbook metricbeat-playbook.yml`
         - `ansible-playbook packtbeat-playbook.yml`
 
+
+## autoconfig
+
+Alternatively, it is possible to complete the entire installation with a script.   
+
+`setup.sh`:
+- Installs dependencies
+- Renders the elasticsearch beats and ansible configuration files with jinja2 using the values in `hosts.py`
+- Puts the files where they need to be
+- Optionally, also runs the playbooks
+
+For more information see: [autoconfig/README](autoconfig/README)
+
+1. Clone this repository
+    - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
+2. Navigate to the autoconfig directory
+    - `cd ELK-stack/autoconfig`
+3. Edit `hosts.py`
+    - The objects in hosts.py already match the description of the network above
+    - Modify `hosts` addresses and `remote user` if necessary
+4. Run `setup.sh`
+    - If you only want to run the setup:
+        - `./setup.sh`
+            - This renders the configuration files and places everything where it needs to be
+            - Then you can run the playbooks individually
+    - To run the setup and the playbooks:
+        - `./setup.sh install`
+            - This runs the setup, then the playbooks
