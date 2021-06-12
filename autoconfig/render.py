@@ -16,7 +16,7 @@ def render_file(file_template, variable):
     # put rendered file into a variable
     render = env.get_template(file_template).render(var=variable)
     # some output
-    print(f'[!] writing rendered/{file_template}')
+    print(f'[+] writing rendered/{file_template}')
     # open file handler
     with open(f'rendered/{file_template}', 'w') as f:
         # write rendered file to redered/<filename>
@@ -42,7 +42,7 @@ def edit_cfg():
     # insert line
     lines.insert(position, line)
     # some output
-    print(f'[!] writing rendered/{filename}')
+    print(f'[+] writing rendered/{filename}')
     # file handler, write mode
     with open(f'rendered/{filename}', 'w') as f:
         # write every line in edited file 
