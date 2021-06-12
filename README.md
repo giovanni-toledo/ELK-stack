@@ -181,7 +181,7 @@ Alternatively, it is possible to complete the entire installation with a script.
 - Places every file in its location
 - Optionally, also runs the playbooks
 
-For more information about each file: [scripts/README](scripts/README)
+For more information about each file: [scripts/README](scripts/README.md)
 
 1. Clone this repository
     - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
