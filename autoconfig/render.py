@@ -13,7 +13,7 @@ with open('rendered/hosts', 'w+') as f:
 
 # ansible config
 if hosts.remote_user:
-    ansible_config_file = env.get_template('ansible.cfg').render(user=hosts.remote_user)
+    ansible_config_file = env.get_template('ansible.cfg').render(user=hosts.remote_user[0])
     print('[!] writing rendered/ansible.cfg')
     with open('rendered/ansible.cfg', 'w') as f:
         f.write(ansible_config_file)
