@@ -124,6 +124,8 @@ These Beats allow us to collect the following information from each machine:
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
 
 
+
+
 ## Manual install 
 
 ### Setting up Ansible
@@ -173,7 +175,9 @@ Certain modifications to the configuration files are also required, for more inf
         - `ansible-playbook packtbeat-playbook.yml`
 
 
-## autoconfig
+
+
+## Auto-install
 
 Alternatively, it is possible to complete the entire installation with a script.   
 
