@@ -42,4 +42,7 @@ cp rendered/hosts /etc/ansible/hosts
 echo -e '[!] done\n'
 
 # insert elastic beats configuration templates in Ansible/configs
-cp rendered/*beat.yml 
+echo '[!] populating Ansible/configs'
+cp rendered/*beat.yml ../Ansible/configs/
+echo -e 'done\n'
+
