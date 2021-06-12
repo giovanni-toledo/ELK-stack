@@ -122,9 +122,7 @@ These Beats allow us to collect the following information from each machine:
     - Erros vs successful transactions
     - Latency
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
-
-
-
+---
 
 ## Manual install 
 
@@ -174,9 +172,7 @@ Certain modifications to the configuration files are also required, for more inf
         - `ansible-playbook metricbeat-playbook.yml`
         - `ansible-playbook packtbeat-playbook.yml`
 
-
-
-
+---
 ## Auto-install
 
 Alternatively, it is possible to complete the entire installation with a script.   
