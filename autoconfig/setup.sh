@@ -14,7 +14,7 @@ if [ $? -ne 0 ]; then
     echo '[x] failed! \n[!] please install pip3 manually';
     exit;
 else
-    echo '[!] success';
+    echo '[!] done\n';
 fi
 
 # install jinja2
@@ -24,11 +24,13 @@ if [ $? -ne 0 ]; then
     echo '[x] failed!';
     exit;
 else 
-    echo '[!] success';
+    echo '[!] done\n';
 fi
 
+# create rendered/
+mkdir rendered
 
 # render config files
-echo '[!] rendering configuration files...'
+echo '[!] rendering configuration files...\n'
 python3 render.py 
 
