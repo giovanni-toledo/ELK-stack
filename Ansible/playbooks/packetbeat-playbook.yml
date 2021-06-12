@@ -16,7 +16,7 @@
 
     - name: drop in packetbeat.yml
       copy:
-        src: ../configs/packetbeat-cfg.yml
+        src: ../configs/packetbeat.yml
         dest: /etc/packetbeat/packetbeat.yml
 
     - name: set up packetbeat
