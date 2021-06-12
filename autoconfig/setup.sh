@@ -59,7 +59,7 @@ echo -e '[+] done\n'
 echo -e '\n[!] SETUP COMPLETE\n'
 
 # if ./setup.sh install 
-if [ -z $ARG ] && [ $ARG = 'install' ]; then
+if [ ! -z $ARG ] && [ $ARG = 'install' ]; then
     cd ../Ansible/playbooks
     # install elk server first
     # beat playbooks fail if kibana is not ready
