@@ -6,7 +6,9 @@
 # to run the setup AND run the playbooks 
 #   ./setup.sh install
 
-ARG = $1
+if [ ! -z $1 ]; then
+    ARG = $1
+fi
 
 # check for root 
 if [ $UID -ne 0 ]; then
