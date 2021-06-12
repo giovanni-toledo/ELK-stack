@@ -25,6 +25,8 @@ if [ $? -ne 0 ]; then
     exit;
 else 
     echo '[!] success';
+fi
+
 
 # render config files
 echo '[!] rendering configuration files...'
