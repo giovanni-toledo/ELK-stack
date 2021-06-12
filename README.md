@@ -123,6 +123,7 @@ These Beats allow us to collect the following information from each machine:
     - Latency
     ![Packetbeat-dashboard](Images/packetbeat-dashboard.png)
 
+## Manual Install
 
 ### Setting up Ansible
 
