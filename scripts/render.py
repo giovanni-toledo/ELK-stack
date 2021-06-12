@@ -2,7 +2,7 @@ import hosts
 from jinja2 import Environment, FileSystemLoader
 
 '''
-This file contains 2 main functions: 
+This file contains 2 functions: 
 render_file renders multiple configuration files from jinja2 templates located in templates/ and writes the rendered file in rendered/
 edit_cfg is a more straightforward approach to editing templates/ansible.cfg since it was not playing nice with jinja2, and also writes it to rendered/
 
@@ -23,7 +23,6 @@ def render_file(file_template, variable):
         f.write(render)
 
 
-# ansible.cfg isn't playing nice with jinja
 def edit_cfg():
     # specific for ansible.cfg
     filename = 'ansible.cfg'
