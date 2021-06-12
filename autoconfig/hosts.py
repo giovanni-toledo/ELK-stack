@@ -15,5 +15,5 @@ hostgroups = [
 ]
 
 
-# If SSH keys configured, edit the line below to match the username as follows:
-remote_user = [{'name': 'azadmin'}]
+# If SSH keys configured, uncomment and edit the line below to match the username 
+remote_user = 'azadmin'
