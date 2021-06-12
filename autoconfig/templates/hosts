@@ -17,13 +17,13 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group:
 
-[{{ hostgroup[0].name }}]
-{% for host in hostgroup[0].hosts %}
+[{{ var[0].name }}]
+{% for host in var[0].hosts %}
 {{ host }} ansible_python_interpreter=/usr/bin/python3
 {% endfor %}
 
-[{{ hostgroup[1].name }}]
-{{ hostgroup[1].hosts }} ansible_python_interpreter=/usr/bin/python3
+[{{ var[1].name }}]
+{{ var[1].hosts }} ansible_python_interpreter=/usr/bin/python3
 ## alpha.example.org
 ## beta.example.org
 ## 192.168.1.100
