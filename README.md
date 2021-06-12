@@ -178,7 +178,7 @@ Alternatively, it is possible to complete the entire installation with a script.
 `setup.sh`:
 - Installs dependencies
 - Renders the elasticsearch beats and ansible configuration files with jinja2 using the values in `hosts.py`
-- Puts the files where they need to be
+- Places every file in its location
 - Optionally, also runs the playbooks
 
 For more information see: [autoconfig/README](autoconfig/README)
