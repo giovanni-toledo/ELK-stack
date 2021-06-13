@@ -191,10 +191,10 @@ For more information about each file: [scripts/README](scripts/README.md)
     - The objects in hosts.py already match the description of the network topology described above
     - Modify `hosts` addresses and `remote user` if necessary
 4. Run `setup.sh`
-    - If you only want to run the setup:
+    - If you want to run the playbooks individually:
         - `./setup.sh`
             - This renders the configuration files and places everything where it needs to be
             - Then you can run the playbooks individually
-    - To run the setup and the playbooks:
+    - To run playbooks automatically:
         - `./setup.sh install`
             - This runs the setup, then the playbooks
