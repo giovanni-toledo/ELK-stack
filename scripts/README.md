@@ -6,23 +6,22 @@ Below is a description of each file.
 ### setup.sh
 
 This script:
-- must be run as root
+- Must be run as root
 - `./setup.sh`
-- installs dependencies:
+- Installs dependencies:
     - pip3
     - jinja2
-- runs the setup
-    - creates the `rendered/` directory
-    - calls `render.py`
-    - overwrites:
+- Runs the setup
+    - Creates the `rendered/` directory
+    - Calls `render.py`
+    - Overwrites:
         - `/etc/ansible/hosts` with `rendered/hosts`
         - `/etc/ansible/ansible.cfg` with `rendered/ansible.cfg`
-        - all the beat configuration files in `Elk-stack/Ansible/configs`
-- runs the playbooks
-    - `./setup.sh install`
-    - runs `elk-playbook.yml`
-    - runs `dvwa-playbook.yml`
-    - runs `beats-playbook.yml`
+        - All the beat configuration files in `Elk-stack/Ansible/configs`
+- `./setup.sh install`
+    - Runs `elk-playbook.yml`
+    - Runs `dvwa-playbook.yml`
+    - Runs `beats-playbook.yml`
 
 
 ### hosts.py
@@ -49,7 +48,7 @@ hostgroups = [
 - `hostgroups` is a list of python objects. 
 - These objects are used to render:
     - `/etc/ansible/hosts`
-    - the elasticsearch beats configuration files
+    - The elasticsearch beats configuration files
 
 
 ```
@@ -61,9 +60,9 @@ remote_user = 'azadmin'
 ### render.py
 
 This script:
-- imports the data from hosts.py
-- uses jinja2 to render the configuration files from the templates found in [templates](templates).
-- writes the rendered files to the `rendered/` directory
+- Imports the data from hosts.py
+- Uses jinja2 to render the configuration files from the templates found in [templates](templates).
+- Writes the rendered files to the `rendered/` directory
     - `rendered/` is created by `setup.sh` and does not exist by default
-    - execution fails if `rendered/` is not present
+    - Execution fails if `rendered/` is not present
  
