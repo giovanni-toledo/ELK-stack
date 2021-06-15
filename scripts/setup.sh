@@ -54,7 +54,7 @@ echo '[!] populating Ansible/configs'
 cp rendered/*beat.yml ../Ansible/configs/
 echo -e '[+] done\n'
 
-echo -e '\n[!] SETUP COMPLETE\n'
+echo -e '\n[+] SETUP COMPLETE\n'
 
 # if ./setup.sh install 
 if [ ! -z $1 ] && [ $1 = 'install' ]; then
