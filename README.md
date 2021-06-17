@@ -185,8 +185,8 @@ For more information about each file: [scripts/README](scripts/README.md)
 
 1. Clone this repository
     - `git clone https://github.com/giovanni-toledo/ELK-stack.git`
-2. Navigate to the autoconfig directory
-    - `cd ELK-stack/autoconfig`
+2. Navigate to the scripts directory
+    - `cd ELK-stack/scripts`
 3. Edit `hosts.py`
     - The objects in hosts.py already match the description of the network topology described above
     - Modify `hosts` addresses and `remote user` if necessary
